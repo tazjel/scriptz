@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+    <spec-version>2</spec-version>
+    
+    <package name="com.example.MyPrograms">
+        <title>Super-package for my programs</title>
+    </package>
+
+    <version name="1" package="com.example.MyPrograms" type="one-file">
+        <url>http://www.example.com/index.html</url>
+        <dependency package="org.mozilla.Firefox" versions="[7, 8]"/>
+        <dependency package="org.mozilla.Thunderbird" versions="[7, 8]"/>
+        <dependency package="com.videolan.VLCMediaPlayer" versions="[1.1.11, 1.1.11]"/>
+    </version>
+ </root>
