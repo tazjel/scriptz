@@ -14,10 +14,10 @@ SOURCE="bookmarks" #can be an URL (use "url"), a plain text list (use "bookmarks
 USAGE="USAGE: `basename $0` [downloadmedia|stream|createplaylist|getlinks] /path/to/bookmarks/file.html [/path/to/download/dir/] [tag]
 
 ACTIONS:
-	downloadmedia	Downloads all media (audio/video) from supported sites using cclive
-	stream			Streams all media (audio/video) from supported sites using quvi/a media player
-	createplaylist	Not yet implemented
-	getlinks		Creates a plain text file from all queried links
+ * downloadmedia	Downloads all media (audio/video) from supported sites using cclive
+ * stream		Streams all media (audio/video) from supported sites using quvi/a media player
+ * createplaylist	Not yet implemented
+ * getlinks		Creates a plain text file from all queried links
 	
 EXAMPLES:
 	`basename $0` downloadmedia /home/nodiscc/bookmarks.html /home/nodiscc/Video/ video
