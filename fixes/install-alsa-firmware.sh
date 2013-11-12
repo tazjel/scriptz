@@ -1,8 +1,8 @@
 #!/bin/bash
-#script to build ALSA firmware
-#works with E-MU 0404 soundcard
-#from http://wiki.debian.org/snd-emu10k1
-#https://rxtx-linux.googlecode.com/
+#script to build ALSA firmware (works with E-MU 0404 PCI soundcard)
+#From: http://wiki.debian.org/snd-emu10k1
+#License: MIT (http://opensource.org/licenses/MIT)
+#Copyright: nodiscc (https://github.com/nodiscc)
 
 #Check for root privileges
 if [ `whoami` = "root" ]; then
