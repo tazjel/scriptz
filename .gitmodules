@@ -22,6 +22,9 @@
 [submodule "web/youtube_playlist"]
 	path = web/youtube_playlist
 	url = https://github.com/zaius/youtube_playlist
+[submodule "misc/ansiweather"]
+	path = misc/ansiweather
+	url = https://github.com/fcambus/ansiweather
 [submodule "utility/conversion/DokuWiki-to-Markdown-Converter"]
 	path = utility/conversion/DokuWiki-to-Markdown-Converter
 	url = https://github.com/ludoza/DokuWiki-to-Markdown-Converter
