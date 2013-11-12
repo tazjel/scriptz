@@ -28,3 +28,6 @@
 [submodule "utility/conversion/DokuWiki-to-Markdown-Converter"]
 	path = utility/conversion/DokuWiki-to-Markdown-Converter
 	url = https://github.com/ludoza/DokuWiki-to-Markdown-Converter
+[submodule "media/mp3-scripts"]
+	path = media/mp3-scripts
+	url = https://github.com/mafrosis/mp3-scripts
