@@ -4,7 +4,7 @@
 #Source: https://github.com/nodiscc/scriptz
 
 THUMBNAIL_SIZE="200"
-IMAGES_DIR="images"
+IMAGES_DIR="_media"
 
 if [ ! -d thumbs ]
 then
@@ -13,10 +13,15 @@ fi
 
 for IMAGE in $@
 do
-	IMAGE_EXTENSION=`echo "$IMAGE" | awk -F "." '{print $NF}'`
-	IMAGE_BASENAME=`basename "$IMAGE" "$IMAGE_EXTENSION"`
-	convert -thumbnail "$THUMBNAIL_SIZE"x "$IMAGE" "thumbs/${IMAGE_BASENAME}_thumb.${IMAGE_EXTENSION}"
-	echo "[![](${IMAGES_DIR}/thumbs/${IMAGE_BASENAME}_thumb.${IMAGE_EXTENSION})](${IMAGES_DIR}/${IMAGE})"
+	if echo "$IMAGE" | grep "_thumb."
+	then
+		echo "$IMAGE already a thumbnail"; 
+	else
+		IMAGE_EXTENSION=`echo "$IMAGE" | awk -F "." '{print $NF}'`
+		IMAGE_BASENAME=`basename "$IMAGE" "$IMAGE_EXTENSION"`
+		convert -thumbnail "$THUMBNAIL_SIZE"x "$IMAGE" "thumbs/${IMAGE_BASENAME}_thumb.${IMAGE_EXTENSION}"
+		echo "[![](${IMAGES_DIR}/thumbs/${IMAGE_BASENAME}_thumb.${IMAGE_EXTENSION})](${IMAGES_DIR}/${IMAGE})"
+	fi
 done
 
 
