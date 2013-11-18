@@ -1,0 +1,145 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>sp</title>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.hint.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	//menu
+	$("#button").mouseenter(function(){
+		$("#menuu").animate({marginBottom: "48"});
+	});
+	$("#button").click(function(){
+		$("#menuu").animate({marginBottom: "0"});
+	});
+
+	//color from, background, btngo
+	$('input#formgoo, textarea#formgoo').focus(function(){
+		$("#bggoo").css({border:"1px solid #bbbbbb"});
+	});
+	$('input#formda, textarea#formda').focus(function(){
+		$("#bgda").css({border:"1px solid #bbbbbb"});
+	});
+	$('input#formyou, textarea#formyou').focus(function(){
+		$("#bgyou").css({border:"1px solid #bbbbbb"});
+	});
+	
+	$('input#formgoo, textarea#formgoo').blur(function(){
+		$("#bggoo").css({border:"1px solid #e5e5e5"});
+	});
+	$('input#formda, textarea#formda').blur(function(){
+		$("#bgda").css({border:"1px solid #e5e5e5"});
+	});
+	$('input#formyou, textarea#formyou').blur(function(){
+		$("#bgyou").css({border:"1px solid #e5e5e5"});
+	});
+
+	//hide title when is focus
+	$('input[title!=" "], textarea[title!=" "]').hint();
+});
+</script>
+<style type="text/css">
+body {
+	background-color: #f5f5f5;
+	margin: 0px;
+	overflow: hidden;
+}
+#button {
+	width: 50px;
+	height: 36px;
+	margin-left: 70px;
+	margin-bottom: -12px;
+	background-image: url(images/button.png);
+}
+#menu {
+	background-color: #303030;
+	padding: 15px 20px 18px 20px;
+	heightt:12px;
+	margin-bottom: -72px;
+	-moz-box-shadow: 0px 0px 6px #000000;
+	-webkit-box-shadow: 0px 0px 6px #000000;
+}
+#menu a {
+	font-family: tahoma;
+	font-size: 9px;
+	color: #bbbbbb;
+	text-decoration: none;
+	padding: 0px 20px 0px 20px;
+}
+#menu a:hover {
+	color: #eeeeee;
+}
+#bggoo, #bgyou, #bgda {
+	margin-left: 70px;
+	width: 300px;
+	height: 26px;
+	background-color: #e5e5e5;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border: 1px solid #e5e5e5;
+}
+#formgoo, #formyou, #formda {
+	width: 210px;
+	border: 0px;
+	background-color: #e5e5e5;
+	font-size: 9px;
+	font-family: tahoma;
+	color: #969696;
+	margin: 7px;
+}
+#btngo {
+	border: 0px;
+	background-color: #e5e5e5;
+	font-size: 9px;
+	font-family: tahoma;
+	color: #969696;
+	margin: 7px 0px 7px 0px;
+	float: right;
+}
+</style>
+</head>
+<body>
+<table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr><td align="left" valign="middle">
+	<div id="bggoo">
+      <form method="get" action="http://www.google.com/search">
+        <input id="formgoo" name="q" type="text" maxlength="255" value="" title="Google..">
+        <input id="btngo" name="submit" type="submit" value="Go">
+      </form>
+    </div>
+	<br>
+	<div id="bgda">
+	  <form action="http://browse.deviantart.com/" method="get">
+	    <input id="formda" name="qh" type="text" maxlength="128" value="" title="Deviantart..">
+        <input id="btngo" name="submit" type="submit" value="Go">
+	  </form>
+	</div>
+	<br>
+	<div id="bgyou">
+	  <form action="http://www.youtube.com/results" method="get">
+	    <input id="formyou" name="search_query" type="text" maxlength="128" value="" title="Youtube..">
+        <input id="btngo" name="submit" type="submit" value="Go">
+	  </form>
+	</div>
+  </td></tr>
+  <tr><td height="100px" align="left" valign="bottom">
+    <div id="menuu">
+      <div id="menu">
+	    <a href="http://folter-x.deviantart.com">Deviantart</a>
+		<a href="http://vk.com/id69605354">Vkontakte</a>
+		<a href="http://www.youtube.com">Youtube</a>
+	    <a href="http://translate.google.com/translate_t?hl=es#">Translator</a>
+	    <a href="http://www.upload.folter.es">Uploadfile</a>
+	    <a href="https://admin.1and1.es/xml/config/Login;jsessionid=92D6C9C4DA24558669E079C69F1C681F.TCpfix85a?ucuoId=PUAC%3Adefault.WH.ES-201041519320-80090CF886592777D3805B1BD15D94B0.TCpfix150a&zanpid=15046258C825112649T1360767665895154689&site=CC.WH.ES&linkOrigin=Home&linkId=hd.nav.logindeusuario&__frame=_top&linkType=txt&__lf=Static&__rd=ac170c22fuq824hzWSvkER0JTu41DS7O&origin[site]=PU.WH.ES&origin[page]=Home">Hosting</a>
+	    <a href="https://webmail.1and1.es/xml/webmail/Login;jsessionid=CA63B85F4891313BE32C6D36D62D9501.TC161a?__reuse=1271351006584">Webmail</a>
+		<a href="http://www.cinetube.es/peliculas">Cinetube</a>
+		<a href="http://www.dospuntocerovision.com">2.0vision</a>
+		<a href="http://www.seriesyonkis.com">Seriesyonkis</a>
+      </div>
+	<div id="button"></div>
+	</div>
+  </td></tr>
+</table>
+</body>
+</html>
