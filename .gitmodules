@@ -31,3 +31,6 @@
 [submodule "media/mp3-scripts"]
 	path = media/mp3-scripts
 	url = https://github.com/mafrosis/mp3-scripts
+[submodule "sysadmin/LANs.py"]
+	path = sysadmin/LANs.py
+	url = https://github.com/DanMcInerney/LANs.py
