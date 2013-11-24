@@ -1599,7 +1599,7 @@ if [ ! -e "/usr/bin/macchanger" ]; then
 fi
 if [ "$mode" == "crack" ] || [ "$mode" == "table" ]; then
     if [ "$wpaMethod" == "brute" ]; then
-      if [ ! -e "/pentest/passwords/crunch/crunch" ]; then
+      if [ ! -e "/usr/bin/crunch" ]; then
          display error "crunch isn't installed"
          echo -ne "\e[00;33m[~]\e[00m "; read -p "Would you like to try and install it? [Y/n]: "
          if [[ ! "$REPLY" =~ ^[Nn]$ ]] && [ ! -e "/pentest/passwords/crunch/crunch" ]; then action "Installing crunch" "mkdir -p \"$(pwd)/tmp/\"; wget -O \"$(pwd)/tmp/crunchNEW.tgz\" http://sourceforge.net/projects/crunch-wordlist/files/crunch-wordlist/crunch-2.9.tgz/download && mv \"$(pwd)/tmp/crunchNEW.tgz\" \"$(pwd)/tmp/crunch.tgz\"; wget -O \"$(pwd)/tmp/crunchOLD.tgz\" http://downloads.sourceforge.net/project/crunch-wordlist/crunch-wordlist/OldFiles/crunch2.9.tgz && \"$(pwd)/tmp/crunchOLD.tgz\" \"$(pwd)/tmp/crunch.tgz\"; tar -xvf \"$(pwd)/tmp/crunch.tgz\" -C \"$(pwd)/tmp/\" && cd \"$(pwd)/tmp/crunch2.9\" && make install && rm -rf \"$(pwd)/tmp/crunch2.9.tgz\" /pentest/passwords/crunch/crunch2.9/"; fi
