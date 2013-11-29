@@ -12,7 +12,7 @@ egrep -w --color=always "#[a-z|A-Z]*" ~/.osmo/calendar_notes.xml
 }
 
 _LookForTag() {
-egrep -w --color=always "#${TAG}" ~/.osmo/calendar_notes.xml
+egrep -w --color=always -i "#${TAG}" ~/.osmo/calendar_notes.xml
 }
 
 _ListTags() {
