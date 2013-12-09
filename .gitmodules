@@ -37,3 +37,6 @@
 [submodule "sysadmin/to"]
 	path = sysadmin/to
 	url = https://github.com/resultsreturned/to
+[submodule "utility/cb-wmhacks"]
+	path = utility/cb-wmhacks
+	url = https://github.com/corenominal/cb-wmhacks
