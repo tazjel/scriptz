@@ -1,0 +1,25 @@
+#!/bin/sh
+#Description: render a markdown document to HTML and view it in the default browser
+#Dependencies: pandoc
+#TODO: open a file selection dialog if no argument is passed
+
+set -e
+
+
+res_dir="/usr/local/lib/markdownview"
+css_list="-c ${res_dir}/markdown.css -c ${res_dir}/baby-blue.css"
+#tmpfile="~/.cache/markdownview/out.html"
+tmpfile=`mktemp`
+
+if [ ! -d ~/.cache/markdownview/ ]
+	then mkdir ~/.cache/markdownview/
+fi
+
+if [ -f "$tmpfile" ]
+	then rm "$tmpfile"
+fi
+
+pandoc -t html -o $tmpfile -c ${res_dir}/markdown.css -c ${res_dir}/baby-blue.css -s "$1"
+
+
+x-www-browser $tmpfile

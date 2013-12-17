@@ -1,0 +1,13 @@
+
+[Desktop Entry]
+Encoding=UTF-8
+Name=Markdown Viewer
+Comment=Simple Markdown document viewer
+GenericName=Markdown Viewer
+Exec=markdownview %f
+Icon=application-rtf
+Terminal=false
+StartupNotify=true
+Type=Application
+Categories=Application;Utility;GTK;Viewer
+MimeType=text/x-markdown
