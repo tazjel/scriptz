@@ -6,6 +6,9 @@
 #TODO: make it color each tag differently (maybe use hashes of tag names to attrib them a color)
 #TODO: make it search in Tasks too
 #TODO: remove <message> and </message> from output
+#TODO: rewrite it in python
+#TODO: also parse task entries
+#TODO: do not display striked through lines, or completed tasks
 
 _JustHighlightTags() {
 egrep -w --color=always "#[a-z|A-Z]*" ~/.osmo/calendar_notes.xml
