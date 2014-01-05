@@ -15,9 +15,8 @@ if [ -f "$tmpfile" ]
 fi
 
 pandoc -t html -o $tmpfile -c ${res_dir}/markdown.css -c ${res_dir}/baby-blue.css -s "$1"
-
+#TODO embed CSS in html file, use only baby-blue.css, decrease padding around code elements
 
 x-www-browser $tmpfile
 sleep 30
 rm "$tmpfile"
-
