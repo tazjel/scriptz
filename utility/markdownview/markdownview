@@ -8,12 +8,7 @@ set -e
 
 res_dir="/usr/local/lib/markdownview"
 css_list="-c ${res_dir}/markdown.css -c ${res_dir}/baby-blue.css"
-#tmpfile="~/.cache/markdownview/out.html"
 tmpfile=`mktemp`
-
-if [ ! -d ~/.cache/markdownview/ ]
-	then mkdir ~/.cache/markdownview/
-fi
 
 if [ -f "$tmpfile" ]
 	then rm "$tmpfile"
@@ -23,3 +18,6 @@ pandoc -t html -o $tmpfile -c ${res_dir}/markdown.css -c ${res_dir}/baby-blue.cs
 
 
 x-www-browser $tmpfile
+sleep 30
+rm "$tmpfile"
+
