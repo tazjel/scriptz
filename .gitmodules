@@ -46,3 +46,6 @@
 [submodule "utility/spark"]
 	path = utility/spark
 	url = https://github.com/holman/spark
+[submodule "utility/todo.txt-cli"]
+	path = utility/todo.txt-cli
+	url = https://github.com/ginatrapani/todo.txt-cli
