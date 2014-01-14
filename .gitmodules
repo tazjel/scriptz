@@ -49,3 +49,6 @@
 [submodule "utility/todo.txt-cli"]
 	path = utility/todo.txt-cli
 	url = https://github.com/ginatrapani/todo.txt-cli
+[submodule "sysadmin/recon-ng"]
+	path = sysadmin/recon-ng
+	url = https://bitbucket.org/LaNMaSteR53/recon-ng
