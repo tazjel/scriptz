@@ -1,10 +1,10 @@
 #!/bin/bash
 #Description: Script used to change resolution to a non-natively supported one.
+#Example: broken edge on screen
 #Works on Intel cards.
 #License: MIT (http://opensource.org/licenses/MIT)
-#Copyright: Rxtx Project <nodiscc@gmail.com>
+#Source: https://github.com/nodiscc/scriptz
 #Thanks to barti_ddu at http://superuser.com/questions/347437
-#TODO other resolutions
 
 
 echo "creating mode line for Xrandr..."
