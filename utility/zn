@@ -1,0 +1,59 @@
+#!/bin/bash
+#Command line tool to manage your notes with the Zim desktop wiki
+#Source: https://github.com/nodiscc/scriptz
+#License: MIT (http://opensource.org/licenses/MIT)
+ 
+set -e
+USAGE="USAGE: $0 [ a ] [ t ] \"text\"
+	$0			Show all notes
+	$0 a \"note text\"	Add \"note text\" in a new note
+	$0 t			List todos/tasks in notes
+	$0 \"text\"		Search notes for \"text\"
+"
+
+NS=`date +%Y:%m`
+BN=`date +%d`
+#Get default notebook path from config file
+NOTEBOOK=`grep -A1 "Default" ~/.config/zim/notebooks.list | tail -n 1 | sed -e "s|~|$HOME|"`
+#Ignore pages metadata
+IGNOREPATTERN="Content-Type:|Wiki-Format:|Creation-Date:"
+
+#List all notes, sorted
+function _ListNotes() {
+find "$NOTEBOOK" -name "*.txt" | sort| xargs cat | egrep -v "$IGNOREPATTERN" | less
+}
+
+#Add a note to the current day page in the notebook
+function _AddNote() {
+zim --plugin quicknote notebook=Notes namespace="Calendar:$NS" basename="$BN" append=true text="$@"
+}
+
+#Filter/search in notes	
+function _FilterNotes() {
+egrep -ri --binary-files=without-match --color=always "$@" $NOTEBOOK | sort
+}
+
+#List all tasks	
+function _ListTasks() {
+	egrep --binary-files=without-match --color=always -ir "\[ ]|todo" $NOTEBOOK |sort
+#TODO: if filename ends with "[0000-9999]/[1-12]/[1-31]", show only this part
+#TODO: remove notebook basedir from filename part
+#TODO: ignore striked @todos (encloed between ~~)
+#TODO: if a file is called todo.txt, list all entries in it
+#TODO: get tasklist entries pattern (@todo, @fixme...) from config file
+}
+	
+function _Main() {
+if [ "$1" = "h" -o "$1" = "--help" -o "$1" = "-h" ]
+then echo "$USAGE"
+elif [[ "$1" = "a" ]]
+then shift; _AddNote "$@"
+elif [[ "$@" = "" ]]
+then _ListNotes
+elif [[ "$1" = "t" ]]
+then _ListTasks
+else _FilterNotes "$@"
+fi
+	}
+	
+_Main "$@"
