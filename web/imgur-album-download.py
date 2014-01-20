@@ -2,7 +2,7 @@
 # encoding: utf-8
 """
 imguralbum.py - Download a whole imgur album in one go.
-
+BUG: downloads low-res images (h.jpg suffix)
 MIT License
 Copyright Alex Gisby <alex@solution10.com>
 """
