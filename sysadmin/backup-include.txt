@@ -6,14 +6,7 @@
 # somewhere else, in a safe place, offline and encrypted.
 ###############################
 
-#TODO: copyright
-#TODO: QUOTE THE STRINGS !!!
-#TODO: Zenity GUI ?
-#TODO: Optionally zip it. Be aware that that you will need free drive space
-###### on the destination machine to unzip it. To avoid this you can use
-###### archivemount or /usr/lib/gvfs/gvfsd-archive.
-#TODO: optionnally encrypt it!
-
+#TODO: Move this to a backintime config file (proper tool for the job)
 
 ### Liferea Feeds and reading state ###
 # Liferea must not be running for this to work
