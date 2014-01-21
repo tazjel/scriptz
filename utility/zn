@@ -10,6 +10,7 @@ USAGE="USAGE: $0 [ a ] [ t ] \"text\"
 	$0			Show all notes
 	$0 a \"note text\"	Add \"note text\" in a new note
 	$0 t			List todos/tasks in notes
+	$0 @			List tags in notes
 	$0 \"text\"		Search notes for \"text\"
 "
 
@@ -36,6 +37,12 @@ function _FilterNotes() {
 egrep -ri --binary-files=without-match --color=always "$@" $NOTEBOOK | sort
 }
 
+#List all tags	
+function _ListTags() {
+	echo listtags
+	egrep --binary-files=without-match --color=always --only-matching --no-filename -ir '@[^[:space:]]*' $NOTEBOOK |sort -u
+}
+
 #List all tasks	
 function _ListTasks() {
 	egrep --binary-files=without-match --color=always -ir "\[ ]|todo" $NOTEBOOK |sort
@@ -54,6 +61,8 @@ elif [[ "$@" = "" ]]
 then _ListNotes
 elif [[ "$1" = "t" ]]
 then _ListTasks
+elif [[ "$1" = "@" ]]
+then _ListTags
 else _FilterNotes "$@"
 fi
 	}
