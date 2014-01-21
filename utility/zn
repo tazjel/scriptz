@@ -6,7 +6,7 @@
 #TODO: add a snippet management mode like https://github.com/holman/boom
  
 set -e
-USAGE="USAGE: $0 [ a ] [ t ] \"text\"
+USAGE="USAGE: $0 [ a ] [ t ] [ @ ] \"text\"
 	$0			Show all notes
 	$0 a \"note text\"	Add \"note text\" in a new note
 	$0 t			List todos/tasks in notes
@@ -29,12 +29,12 @@ find "$NOTEBOOK" -name "*.txt" | sort| xargs cat | egrep -v "$IGNOREPATTERN" | l
 #Add a note to the current day page in the notebook
 #TODO: skip the quick note dialog
 function _AddNote() {
-zim --plugin quicknote notebook=Notes namespace="Calendar:$NS" basename="$BN" append=true text="$@"
+zim --plugin quicknote notebook=Notes namespace="Calendar:$NS" basename="$BN" append=true text="$*"
 }
 
 #Filter/search in notes	
 function _FilterNotes() {
-egrep -ri --binary-files=without-match --color=always "$@" $NOTEBOOK | sort
+egrep -ri --binary-files=without-match --color=always "$*" $NOTEBOOK | sort
 }
 
 #List all tags	
@@ -45,7 +45,7 @@ function _ListTags() {
 
 #List all tasks	
 function _ListTasks() {
-	egrep --binary-files=without-match --color=always -ir "\[ ]|todo" $NOTEBOOK |sort
+	egrep --binary-files=without-match --color=always -ir "\[ ]|@todo" $NOTEBOOK |sort
 #TODO: remove notebook basedir from filename part
 #TODO: ignore striked @todos (encloed between ~~)
 #TODO: if a file is called todo.txt, list all entries in it
@@ -56,15 +56,15 @@ function _Main() {
 if [ "$1" = "h" -o "$1" = "--help" -o "$1" = "-h" ]
 then echo "$USAGE"
 elif [[ "$1" = "a" ]]
-then shift; _AddNote "$@"
-elif [[ "$@" = "" ]]
+then shift; echo adding; _AddNote "$*"
+elif [[ "$*" = "" ]]
 then _ListNotes
 elif [[ "$1" = "t" ]]
 then _ListTasks
 elif [[ "$1" = "@" ]]
 then _ListTags
-else _FilterNotes "$@"
+else _FilterNotes "$*"
 fi
 	}
 	
-_Main "$@"
+_Main "$*"
