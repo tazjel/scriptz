@@ -1,5 +1,5 @@
 #!/bin/bash
-#Command line tool to manage your notes with the Zim desktop wiki
+#Description: Command line tool to manage your notes with the Zim desktop wiki (http://zim-wiki.org/)
 #Source: https://github.com/nodiscc/scriptz
 #License: MIT (http://opensource.org/licenses/MIT)
 
@@ -26,6 +26,7 @@ find "$NOTEBOOK" -name "*.txt" | sort| xargs cat | egrep -v "$IGNOREPATTERN" | l
 }
 
 #Add a note to the current day page in the notebook
+#TODO: skip the quick note dialog
 function _AddNote() {
 zim --plugin quicknote notebook=Notes namespace="Calendar:$NS" basename="$BN" append=true text="$@"
 }
@@ -38,7 +39,6 @@ egrep -ri --binary-files=without-match --color=always "$@" $NOTEBOOK | sort
 #List all tasks	
 function _ListTasks() {
 	egrep --binary-files=without-match --color=always -ir "\[ ]|todo" $NOTEBOOK |sort
-#TODO: if filename ends with "[0000-9999]/[1-12]/[1-31]", show only this part
 #TODO: remove notebook basedir from filename part
 #TODO: ignore striked @todos (encloed between ~~)
 #TODO: if a file is called todo.txt, list all entries in it
