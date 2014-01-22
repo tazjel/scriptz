@@ -52,3 +52,6 @@
 [submodule "sysadmin/recon-ng"]
 	path = sysadmin/recon-ng
 	url = https://bitbucket.org/LaNMaSteR53/recon-ng
+[submodule "sysadmin/uberimg"]
+	path = sysadmin/uberimg
+	url = https://github.com/infinity0/uberimg
