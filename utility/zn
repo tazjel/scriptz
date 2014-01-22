@@ -67,4 +67,4 @@ else _FilterNotes "$*"
 fi
 	}
 	
-_Main "$*"
+_Main "$@"
