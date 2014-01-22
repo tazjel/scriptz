@@ -1,7 +1,9 @@
 #!/bin/bash
-#Convert animated gifs to ogg video files
+#Description: Convert animated gifs to ogg video files
 #Source: https://github.com/nodiscc/scriptz
 #License: MIT (http://opensource.org/licenses/MIT)
+#Dependencies: avconv, mplayer
+#Saves a lot of space without sacrificing quality. Plays nice with mplayer -loop 0 output.ogv 
 #TODO: make the output cleaner/more informative
 set -e
 
