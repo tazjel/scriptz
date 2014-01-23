@@ -55,3 +55,6 @@
 [submodule "sysadmin/uberimg"]
 	path = sysadmin/uberimg
 	url = https://github.com/infinity0/uberimg
+[submodule "web/Uppity"]
+	path = web/Uppity
+	url = https://github.com/Kiwi/Uppity
