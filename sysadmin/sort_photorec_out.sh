@@ -1,9 +1,7 @@
 #!/bin/bash
-#This script arranges Photorec's recovered files in subdirectories
-#corresponding to their extension.
+#This script arranges Photorec's recovered files in subdirectories, corresponding to their extension.
 #http://www.cgsecurity.org/wiki/PhotoRec
-#https://rxtx-linux.googlecode.com/
-#
+#TODO: see http://www.reddit.com/r/linux/comments/1w40mt/need_a_text_file_browser_to_make_sifting_through/ceyhuhd
 
 #check for root permissions
 if [ `whoami` = "root" ]; then
