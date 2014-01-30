@@ -50,6 +50,8 @@ function _ListTasks() {
 #TODO: if a file is called todo.txt, list all entries in it
 #TODO: get tasklist entries pattern (@todo, @fixme...) from config file
 }
+
+#TODO: zn do
 	
 function _Main() {
 if [ "$1" = "h" -o "$1" = "--help" -o "$1" = "-h" ]
