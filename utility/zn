@@ -6,11 +6,12 @@
 #TODO: add a snippet management mode like https://github.com/holman/boom
  
 set -e
-USAGE="USAGE: $0 [ a ] [ t ] [ @ ] \"text\"
-	$0			Show all notes
-	$0 a \"note text\"	Add \"note text\" in a new note
-	$0 t			List todos/tasks in notes
-	$0 @			List tags in notes
+USAGE="USAGE: $0 [ -h|--help ] [ a|add ] [ t|tasks ] [ @ ] \"text\"
+	$0 			Show all notes
+	$0 -h, --help		Show this help message
+	$0 a, add \"note text\"	Add \"note text\" in a new note
+	$0 t, tasks		List todos/tasks in notes
+	$0 @			List all tags
 	$0 \"text\"		Search notes for \"text\"
 "
 
@@ -56,11 +57,11 @@ function _ListTasks() {
 function _Main() {
 if [ "$1" = "h" -o "$1" = "--help" -o "$1" = "-h" ]
 then echo "$USAGE"
-elif [[ "$1" = "a" ]]
+elif [ "$1" = "a" -o "$1" = "add" ]
 then shift; echo adding; _AddNote "$*"
 elif [[ "$*" = "" ]]
 then _ListNotes
-elif [[ "$1" = "t" ]]
+elif [ "$1" = "t" -o "$1" = "tasks" ]
 then _ListTasks
 elif [[ "$1" = "@" ]]
 then _ListTags
