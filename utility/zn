@@ -47,8 +47,9 @@ function _ListTags() {
 #List all tasks	
 function _ListTasks() {
 	egrep --binary-files=without-match --color=always -ir "\[ ]|@todo" "$NOTEBOOK" |sed "s|$NOTEBOOK||g" | sort
-#TODO: ignore striked @todos (encloed between ~~)
 #TODO: if a file is called todo.txt, list all entries in it
+#TODO: ignore .bak files
+#TODO: ignore striked @todos (encloed between ~~)
 #TODO: get tasklist entries pattern (@todo, @fixme...) from config file
 }
 
