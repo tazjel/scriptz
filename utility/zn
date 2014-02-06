@@ -12,6 +12,7 @@ USAGE="USAGE: $0 [ -h|--help ] [ a|add ] [ t|tasks ] [ @ ] \"text\"
 	$0 a, add \"note text\"	Add \"note text\" in a new note
 	$0 t, tasks		List todos/tasks in notes
 	$0 @			List all tags
+	$0 j			jump to notebook dir #todo 
 	$0 \"text\"		Search notes for \"text\"
 "
 
