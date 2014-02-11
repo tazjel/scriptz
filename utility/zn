@@ -19,7 +19,7 @@ USAGE="USAGE: $0 [ -h|--help ] [ a|add ] [ t|tasks ] [ @ ] \"text\"
 NS=`date +%Y:%m`
 BN=`date +%d`
 #Get default notebook path from config file
-NOTEBOOK=`grep -A1 "Default" ~/.config/zim/notebooks.list | tail -n 1 | sed -e "s|~|$HOME|"`
+NOTEBOOK=`grep -A1 "Default" ~/.config/zim/notebooks.list | tail -n 1 | sed -e "s|~|$HOME|" | sed -e "s|file://||g"`
 #Ignore pages metadata
 IGNOREPATTERN="Content-Type:|Wiki-Format:|Creation-Date:"
 
