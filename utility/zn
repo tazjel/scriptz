@@ -47,7 +47,7 @@ function _ListTags() {
 
 #List all tasks	
 function _ListTasks() {
-	egrep --binary-files=without-match --color=always -ir "\[ ]|@todo" "$NOTEBOOK" |sed -e "s|$NOTEBOOK||g" -e "s|/Calendar/||g" -e "s/.txt//g" | sort
+	egrep --binary-files=without-match --color=always -ir "\[ ]|@todo" "$NOTEBOOK" |sed -e "s|$NOTEBOOK||g" -e "s|/Calendar/`date +%Y`/||g" -e "s/.txt//g" | sort
 	find "$NOTEBOOK" -name todo.txt | xargs cat | egrep -v "$IGNOREPATTERN"
 #TODO: ignore .bak files
 #TODO: ignore striked @todos (encloed between ~~)
