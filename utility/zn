@@ -19,7 +19,7 @@ USAGE="USAGE: $0 [ -h|--help ] [ a|add ] [ t|tasks ] [ @ ] \"text\"
 NS=`date +%Y:%m`
 BN=`date +%d`
 #Get default notebook path from config file
-NOTEBOOK=`grep -A1 "Default" ~/.config/zim/notebooks.list | tail -n 1 | sed -e "s|~|$HOME|" | sed -e "s|file://||g"`
+NOTEBOOK=`grep -A1 "Default" ~/.config/zim/notebooks.list | tail -n 1 | sed -e "s|~|$HOME|" -e "s|file://||g"`
 #Ignore pages metadata
 IGNOREPATTERN="Content-Type:|Wiki-Format:|Creation-Date:"
 
@@ -47,7 +47,7 @@ function _ListTags() {
 
 #List all tasks	
 function _ListTasks() {
-	egrep --binary-files=without-match --color=always -ir "\[ ]|@todo" "$NOTEBOOK" |sed "s|$NOTEBOOK||g" |sed "s|/Calendar/||g" | sort
+	egrep --binary-files=without-match --color=always -ir "\[ ]|@todo" "$NOTEBOOK" |sed -e "s|$NOTEBOOK||g" -e "s|/Calendar/||g" -e "s/.txt//g" | sort
 	find "$NOTEBOOK" -name todo.txt | xargs cat | egrep -v "$IGNOREPATTERN"
 #TODO: ignore .bak files
 #TODO: ignore striked @todos (encloed between ~~)
